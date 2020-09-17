@@ -1,6 +1,11 @@
+.board {
+  display: flex;
+  width : 90px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .box {
-  height : 30px;
-  width: 30px;
-  outline: none;
-  font-size: 20px;
+  flex: 0 0 32%;
+  height: 30px;
 }
