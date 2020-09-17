@@ -11,9 +11,9 @@ function Box(props){
 
     // Just a plain div with a onClick event
     return (
-        <div className={classes} onClick={onClick}>
+        <button className={classes} onClick={onClick}>
             {xO}
-        </div>
+        </button>
     )
 }
 
