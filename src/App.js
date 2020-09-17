@@ -31,12 +31,21 @@ function App() {
 
   }
 
+  // Reset the state to the start of the game
+  function handleReset(){
+    setBoxList(Array(9).fill("-"))
+    // Last game's winner moves first
+    setIsXTurn(winner === "X" ? true : false)
+  }
+
   return (
     <div>
       <h1>Tic-Tac-Toe</h1>
       <Board boxList={boxList} onClick={handleClick} />
       {/* On basis of winner or turn display appropriate message */}
       <h3>{winner ? `Winner Is ${winner}` : `${xO}'s Turn`}</h3>
+      {/* Reset the state again after the game is completed */}
+      <button onClick={handleReset} style={{display: winner ? "block" : "none"}}>Reset!</button>
     </div>
   );
 }
