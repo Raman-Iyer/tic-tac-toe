@@ -45,9 +45,9 @@ function App() {
       <h1>Tic-Tac-Toe</h1>
       <Board boxList={boxList} onClick={handleClick} />
       {/* On basis of winner or turn display appropriate message */}
-      <h3>{winner ? `Winner Is ${winner}` : steps === 9 ? "Game is a draw!" : `${xO}'s Turn`}</h3>
+      <h3 data-testid='playerStatus'>{winner ? `Winner Is ${winner}` : steps === 9 ? "Game is a draw!" : `${xO}'s Turn`}</h3>
       {/* Reset the state again after the game is completed */}
-      <button onClick={handleReset} style={{ display: winner || steps === 9 ? "block" : "none" }}>Reset!</button>
+      <button data-testid="reset" onClick={handleReset} style={{ display: winner || steps === 9 ? "block" : "none" }}>Reset!</button>
     </div>
   );
 }
