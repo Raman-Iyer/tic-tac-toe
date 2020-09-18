@@ -4,9 +4,9 @@ import App from './App'
 
 test('renders proper player turn', () => {
   const { container } = render(<App />)
-  const PVPRadio = getByTestId(container, "PVPRadio")
+  const pvpRadio = getByTestId(container, "pvp-radio")
   const startButton = getByTestId(container, "start")
-  fireEvent.click(PVPRadio)
+  fireEvent.click(pvpRadio)
   fireEvent.click(startButton)
   const button1 = getByTestId(container, "0")
   const initialStatus = getByTestId(container, "playerStatus")
@@ -17,9 +17,9 @@ test('renders proper player turn', () => {
 
 test('renders proper winner and shows reset button', () => {
   const { container } = render(<App />)
-  const PVPRadio = getByTestId(container, "PVPRadio")
+  const pvpRadio = getByTestId(container, "pvp-radio")
   const startButton = getByTestId(container, "start")
-  fireEvent.click(PVPRadio)
+  fireEvent.click(pvpRadio)
   fireEvent.click(startButton)
   const button1 = getByTestId(container, "0")
   const button2 = getByTestId(container, "1")
@@ -40,9 +40,9 @@ test('renders proper winner and shows reset button', () => {
 
 test('renders reset button after game is draw', () => {
   const { container } = render(<App />)
-  const PVPRadio = getByTestId(container, "PVPRadio")
+  const pvpRadio = getByTestId(container, "pvp-radio")
   const startButton = getByTestId(container, "start")
-  fireEvent.click(PVPRadio)
+  fireEvent.click(pvpRadio)
   fireEvent.click(startButton)
   const button1 = getByTestId(container, "0")
   const button2 = getByTestId(container, "1")
@@ -71,20 +71,20 @@ test('renders reset button after game is draw', () => {
 
 test('Changes the mode', () =>{
   const { container } = render(<App />)
-  const PVPRadio = getByTestId(container, "PVPRadio")
-  const AIRadio = getByTestId(container, "AIRadio")
+  const pvpRadio = getByTestId(container, "pvp-radio")
+  const aiRadio = getByTestId(container, "ai-radio")
   const symbol = getByTestId(container, "symbol")
-  fireEvent.click(PVPRadio)
+  fireEvent.click(pvpRadio)
   expect(symbol.style.display).toBe("none")
-  fireEvent.click(AIRadio)
+  fireEvent.click(aiRadio)
   expect(symbol.style.display).toBe("block")
 })
 
 test('Changes the player symbol to O', () =>{
   const { container } = render(<App />)
-  const ORadio = getByTestId(container, "ORadio")
+  const oRadio = getByTestId(container, "o-radio")
   const startButton = getByTestId(container, "start")
-  fireEvent.click(ORadio)
+  fireEvent.click(oRadio)
   fireEvent.click(startButton)
   const initialStatus = getByTestId(container, "playerStatus")
   expect(initialStatus.textContent).toBe("O's Turn")

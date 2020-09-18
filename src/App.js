@@ -75,17 +75,17 @@ function App() {
       {/* Select Mode and set the mode on basis of change */}
       <div style={{ display: !isGameStarted ? "block" : "none" }}>
         <h3>Select Mode</h3>
-        <input data-testid="AIRadio" onChange={handleModeChange} type="radio" id="AI" name="mode" checked={mode === "AI" ? true : false} />
+        <input data-testid="ai-radio" onChange={handleModeChange} type="radio" id="AI" name="mode" checked={mode === "AI" ? true : false} />
         <label htmlFor="AI">AI</label>
-        <input data-testid="PVPRadio" onChange={handleModeChange} type="radio" id="PVP" name="mode" />
+        <input data-testid="pvp-radio" onChange={handleModeChange} type="radio" id="PVP" name="mode" />
         <label htmlFor="PVP">PVP</label>
       </div>
       {/* Select player symbol and set the mode on basis of change */}
       <div data-testid="symbol" style={{ display: mode === "AI" && !isGameStarted ? "block" : "none" }}>
         <h3>Select Symbol</h3>
-        <input data-testid="XRadio" onChange={handleSymbolChange} type="radio" id="X" name="symbol" checked={playerSymbol === "X" ? true : false} />
+        <input data-testid="x-radio" onChange={handleSymbolChange} type="radio" id="X" name="symbol" checked={playerSymbol === "X" ? true : false} />
         <label htmlFor="X">X</label>
-        <input data-testid="ORadio" onChange={handleSymbolChange} type="radio" id="O" name="symbol" />
+        <input data-testid="o-radio" onChange={handleSymbolChange} type="radio" id="O" name="symbol" />
         <label htmlFor="O">O</label>
       </div>
       <button data-testid="start" onClick={() => {
