@@ -1,11 +1,137 @@
+*{
+  font-family: 'Lato', sans-serif;
+  padding: auto
+}
+
 .board {
   display: flex;
-  width : 90px;
+  width : 180px;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0 auto;
 }
 
 .box {
-  flex: 0 0 32%;
-  height: 30px;
+  flex: 0 0 33.34%;
+  height: 60px;
+  font-size: 30px;
+  color: #292929;
+  background-color: #fff;
+  border: 0;
+  outline: none;
+}
+
+.box-0{
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.box-1{
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.box-2{
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.box-3{
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.box-4{
+  border: 1px solid black;
+}
+
+.box-5{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.box-6{
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.box-7{
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.box-8{
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.X {
+  color: #2ECC71
+}
+
+.O {
+  color: #D91E18
+}
+
+.radio-label {
+  display: inline-block;
+  padding: 16px 32px;
+  margin: 8px;
+  cursor: pointer;
+  color: #292929;
+  border-radius: 4px;
+  background: #efefef;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+#AI:checked + .radio-label {
+  background: #4183D7;
+  color: #efefef;
+}
+
+#PVP:checked + .radio-label {
+  background: #4183D7;
+  color: #efefef;
+}
+
+#X:checked + .radio-label {
+  background: #2ECC71;
+  color: #efefef;
+}
+
+#O:checked + .radio-label {
+  background: #D91E18;
+  color: #efefef;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+	display: inline-block;
+  margin: 20px 0 0 0;
+  padding: 12px 16px;
+	border: 0;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 400;
+  outline: none;
+}
+
+.start {
+	background-color: #e98724;
+}
+
+.reset {
+	background-color: #292929;
 }

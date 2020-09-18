@@ -7,7 +7,7 @@ function Box(props){
     const { index, xO, onClick } = props
 
     // Class to be applied on basis of X or O
-    const classes = xO ? `box ${xO}` : 'box'
+    const classes = xO !== "-" ? `box box-${index} ${xO}` : `box box-${index}`
 
     // Just a plain div with a onClick event
     return (
