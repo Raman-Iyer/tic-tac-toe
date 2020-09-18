@@ -14,7 +14,7 @@ function Board(props) {
                 // Map the boxList prop to set the corresponding values in each box
                 boxList.map((box, i) => {
                     return (
-                        <Box key={i} xO={box} onClick={() => {
+                        <Box key={i} index={i} xO={box} onClick={() => {
                             onClick(i)
                         }} />
                     )
