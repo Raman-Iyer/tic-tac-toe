@@ -75,29 +75,29 @@ function App() {
       {/* Select Mode and set the mode on basis of change */}
       <div style={{ display: !isGameStarted ? "block" : "none" }}>
         <h3>Select Mode</h3>
-        <input onChange={handleModeChange} type="radio" id="AI" name="mode" checked={mode === "AI" ? true : false} />
+        <input data-testid="AIRadio" onChange={handleModeChange} type="radio" id="AI" name="mode" checked={mode === "AI" ? true : false} />
         <label htmlFor="AI">AI</label>
-        <input onChange={handleModeChange} type="radio" id="PVP" name="mode" />
+        <input data-testid="PVPRadio" onChange={handleModeChange} type="radio" id="PVP" name="mode" />
         <label htmlFor="PVP">PVP</label>
       </div>
       {/* Select player symbol and set the mode on basis of change */}
-      <div style={{ display: mode === "AI" && !isGameStarted ? "block" : "none" }}>
+      <div data-testid="symbol" style={{ display: mode === "AI" && !isGameStarted ? "block" : "none" }}>
         <h3>Select Symbol</h3>
-        <input onChange={handleSymbolChange} type="radio" id="X" name="symbol" checked={playerSymbol === "X" ? true : false} />
+        <input data-testid="XRadio" onChange={handleSymbolChange} type="radio" id="X" name="symbol" checked={playerSymbol === "X" ? true : false} />
         <label htmlFor="X">X</label>
-        <input onChange={handleSymbolChange} type="radio" id="O" name="symbol" />
+        <input data-testid="ORadio" onChange={handleSymbolChange} type="radio" id="O" name="symbol" />
         <label htmlFor="O">O</label>
       </div>
-      <button onClick={() => {
+      <button data-testid="start" onClick={() => {
         setIsGameStarted(true)
       }} style={{ display: !isGameStarted ? "block" : "none" }}>Start Game!</button>
       <div style={{ display: isGameStarted ? "block" : "none" }}>
         <h3>Board</h3>
         <Board boxList={boxList} onClick={handleClick} />
         {/* On basis of winner or turn display appropriate message */}
-        <h3>{winner ? `Winner Is ${winner}` : steps === 9 ? "Game is a draw!" : `${xO}'s Turn`}</h3>
+        <h3 data-testid="playerStatus">{winner ? `Winner Is ${winner}` : steps === 9 ? "Game is a draw!" : `${xO}'s Turn`}</h3>
         {/* Reset the state again after the game is completed */}
-        <button onClick={handleReset} style={{ display: winner || steps === 9 ? "block" : "none" }}>Reset!</button>
+        <button data-testid="reset" onClick={handleReset} style={{ display: winner || steps === 9 ? "block" : "none" }}>Reset!</button>
       </div>
     </div>
   );
